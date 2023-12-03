@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ 
+    <ThingCategoryDef>
+      <defName>AMB_MateIngredients</defName>
+      <label>Mate Ingredients</label>
+      <parent>PlantMatter</parent>
+      <resourceReadoutRoot>true</resourceReadoutRoot>
+      <iconPath>Things/Items/Raw/OrangePeel</iconPath>
+    </ThingCategoryDef>
+	
+
+
+
+</Defs>

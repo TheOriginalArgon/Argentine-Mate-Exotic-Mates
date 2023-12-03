@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<!-- Orange Peel -->
+
+<ThingDef ParentName="RoughPlantBase">
+		<defName>AMB_OrangePeel</defName>
+		<label>orange peel</label>
+		<description>Dryed orange peel, used to flavour mate.</description>
+		<graphicData>
+			<texPath>Things/Items/Raw/OrangePeel</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.5</MarketValue>
+			<Nutrition>0.01</Nutrition>
+			<Flammability>1.5</Flammability>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>215</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<thingCategories>
+			<li>AMB_MateIngredients</li>
+		</thingCategories>
+		<ingestible>
+			<preferability>DesperateOnly</preferability>
+		</ingestible>
+	</ThingDef>
+	
+	<!-- Té de Burro -->
+
+<ThingDef ParentName="RoughPlantBase">
+		<defName>AMB_TeDeBurroLeaves</defName>
+		<label>té de burro leaves</label>
+		<description>Leaves from té de burro, a plant whose leaves are typically used to flavour Mate.</description>
+		<graphicData>
+			<texPath>Things/Items/Raw/TeDeBurroLeaves</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.5</MarketValue>
+			<Nutrition>0.01</Nutrition>
+			<Flammability>1.5</Flammability>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>215</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<thingCategories>
+			<li>AMB_MateIngredients</li>
+		</thingCategories>
+		<ingestible>
+			<preferability>DesperateOnly</preferability>
+		</ingestible>
+	</ThingDef>
+	
+	<!-- Mint Leaves -->
+
+<ThingDef ParentName="RoughPlantBase">
+		<defName>AMB_MintLeaves</defName>
+		<label>mint leaves</label>
+		<description>Mint leaves, used to flavour mate with an unique taste.\n\nMint dries very fast upon being harvested, and it loses its taste, so be sure to make Mate with it as soon as possible.</description>
+		<graphicData>
+			<texPath>Things/Items/Raw/MintLeaves</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.6</MarketValue>
+			<Nutrition>0.001</Nutrition>
+			<Flammability>1.5</Flammability>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>10</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<thingCategories>
+			<li>AMB_MateIngredients</li>
+		</thingCategories>
+		<ingestible>
+			<preferability>DesperateOnly</preferability>
+		</ingestible>
+	</ThingDef>
+	
+</Defs>

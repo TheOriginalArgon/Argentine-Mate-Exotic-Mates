@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Big Mate -->
+
+	<RecipeDef>
+		<defName>AM_MakeTerere</defName>
+		<label>make tereré</label>
+		<description>Make a sweet, refreshing drink similar to Mater. Replace the hot water with lemonade in order to make this delicious and rich drink.</description>
+		<jobString>Making tereré</jobString>
+		<workSkill>Cooking</workSkill>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workAmount>500</workAmount>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		
+		<recipeUsers>
+			<li>Campfire</li>
+			<li>ElectricStove</li>
+			<li>FueledStove</li>			
+		</recipeUsers>
+
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AM_RawYerba</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AMB_RawLemon</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VCE_RawSugar</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			
+			
+
+		</ingredients>
+		<fixedIngredientFilter>			
+			<thingDefs>
+				<li>AM_RawYerba</li>
+				<li>AMB_RawLemon</li>
+				<li>VCE_RawSugar</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>			
+			<thingDefs>
+				<li>AM_RawYerba</li>
+				<li>AMB_RawLemon</li>
+				<li>VCE_RawSugar</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</defaultIngredientFilter>
+		
+		<products>
+			<AMB_Terere>5</AMB_Terere>
+		</products>
+		<researchPrerequisite>AM_MateMixing</researchPrerequisite>
+		
+	</RecipeDef>
+	
+	<!-- Death Berry Mate -->
+	
+	<RecipeDef>
+		<defName>AM_MakeDeathBerryMate</defName>
+		<label>make death berry mate</label>
+		<description>Make a sweet, tasty and great Mate from death berries. Mixing them with orange peel and Yerba will make the berries much safer to consume without getting addicted, however, the boost effects will revert.\n|nDespite this Mate being much safer to consume, it is only recommended to drink this when your colony is lacking hapiness.</description>
+		<jobString>Making Mate from death berries</jobString>
+		<workSkill>Cooking</workSkill>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workAmount>1400</workAmount>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		
+		<recipeUsers>
+			<li>ElectricStove</li>
+			<li>FueledStove</li>			
+		</recipeUsers>
+
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AM_RawYerba</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AMB_OrangePeel</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AMB_DeathBerries</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			
+
+		</ingredients>
+		<fixedIngredientFilter>			
+			<thingDefs>
+				<li>AM_RawYerba</li>
+				<li>AMB_DeathBerries</li>
+				<li>AMB_OrangePeel</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>			
+			<thingDefs>
+				<li>AM_RawYerba</li>
+				<li>AMB_DeathBerries</li>
+				<li>AMB_OrangePeel</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</defaultIngredientFilter>
+		
+		<products>
+			<AMB_BerryMate>5</AMB_BerryMate>
+		</products>
+		<researchPrerequisite>AM_MateMixing</researchPrerequisite>
+		
+	</RecipeDef>
+	
+	<!-- Smokeleaf Mate -->
+	
+	<RecipeDef>
+		<defName>AM_MakeSmokeleafMate</defName>
+		<label>make smokeleaf mate</label>
+		<description>Make a Mate using smokeleaf leaves. Not so strong as a smokeleaf joint, but it is safer to consume without getting addicted.\n\nEffects of the smokeleaf are reduced.</description>
+		<jobString>Making smokeleaf mate</jobString>
+		<workSkill>Cooking</workSkill>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workAmount>500</workAmount>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		
+		<recipeUsers>
+			<li>Campfire</li>
+			<li>ElectricStove</li>
+			<li>FueledStove</li>			
+		</recipeUsers>
+
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AM_RawYerba</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SmokeleafLeaves</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+			
+
+		</ingredients>
+		<fixedIngredientFilter>			
+			<thingDefs>
+				<li>AM_RawYerba</li>
+				<li>SmokeleafLeaves</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>			
+			<thingDefs>
+				<li>AM_RawYerba</li>
+				<li>SmokeleafLeaves</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</defaultIngredientFilter>
+		
+		<products>
+			<AMB_SmokeleafMate>5</AMB_SmokeleafMate>
+		</products>
+		<researchPrerequisite>AM_MateMixing</researchPrerequisite>
+		
+	</RecipeDef>
+	
+	<!-- Spiced Mate -->
+	
+	<RecipeDef>
+		<defName>AM_MakeSpicedMate</defName>
+		<label>make spiced mate</label>
+		<description>Make a Mate using various healthy spices, granting the user immunity to illness and various other improvements.</description>
+		<jobString>Making spiced mate</jobString>
+		<workSkill>Cooking</workSkill>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workAmount>900</workAmount>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		
+		<recipeUsers>
+			<li>Campfire</li>
+			<li>ElectricStove</li>
+			<li>FueledStove</li>			
+		</recipeUsers>
+
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AM_RawYerba</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AMB_TeDeBurroLeaves</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AMB_MintLeaves</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AMB_OrangePeel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			
+
+		</ingredients>
+		<fixedIngredientFilter>			
+			<thingDefs>
+				<li>AM_RawYerba</li>
+				<li>AMB_TeDeBurroLeaves</li>
+				<li>AMB_MintLeaves</li>
+				<li>AMB_OrangePeel</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>			
+			<thingDefs>
+				<li>AM_RawYerba</li>
+				<li>AMB_TeDeBurroLeaves</li>
+				<li>AMB_MintLeaves</li>
+				<li>AMB_OrangePeel</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</defaultIngredientFilter>
+		
+		<products>
+			<AMB_SpicedMate>5</AMB_SpicedMate>
+		</products>
+		<researchPrerequisite>AM_MateMixing</researchPrerequisite>
+		
+	</RecipeDef>
+	
+	<!-- Orange Peel Mate -->
+
+	<RecipeDef>
+		<defName>AM_MakeOrangePeel</defName>
+		<label>dry orange peels</label>
+		<description>Peel oranges, cut them small and dry them to make a great spice used for Mate.\n\nThis takes a lot of work.</description>
+		<jobString>Making tereré</jobString>
+		<workSkill>Cooking</workSkill>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workAmount>2000</workAmount>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+		<allowMixingIngredients>false</allowMixingIngredients>
+		
+		<recipeUsers>
+			<li>TableButcher</li>			
+		</recipeUsers>
+
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VCE_RawOrange</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+			
+
+		</ingredients>
+		<fixedIngredientFilter>			
+			<thingDefs>
+				<li>VCE_RawOrange</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>			
+			<thingDefs>
+				<li>VCE_RawOrange</li>
+				
+			</thingDefs>
+			<categories>
+				
+			</categories>
+		</defaultIngredientFilter>
+		
+		<products>
+			<AMB_OrangePeel>8</AMB_OrangePeel>
+		</products>
+		<researchPrerequisite>AM_MateMixing</researchPrerequisite>
+		
+	</RecipeDef>
+</Defs>

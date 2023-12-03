@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+		<!-- Terere -->
+	
+		<ThingDef ParentName="DrugBase">
+		<defName>AMB_Terere</defName>
+		<label>tereré</label>
+		<description>a fresh version of mate, replacing the hot water with lemonade, and combining it with Yerba, this drink is both refreshing and healthy, and it increases immunity gain to diseases or infections.</description>
+
+		<graphicData>
+			<texPath>Things/Drinks/Terere</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<tickerType>Rare</tickerType>
+		
+		<rotatable>false</rotatable>
+		<stackLimit>25</stackLimit>
+		<statBases>
+			<DeteriorationRate>0.5</DeteriorationRate>
+			<MarketValue>8</MarketValue>
+			<Mass>0.5</Mass>
+			<Flammability>0.5</Flammability>
+			<Nutrition>0.08</Nutrition>
+		</statBases>
+		<ingestible>
+			<foodType>Fluid, Processed</foodType>
+			<joyKind>Chemical</joyKind>
+			<joy>0.2</joy>
+			<nurseable>true</nurseable>
+			<drugCategory>Social</drugCategory>
+			<ingestSound>Ingest_Drink</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.18,0,0)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestCommandString>Drink {0}</ingestCommandString>
+			<ingestReportString>Drinking {0}.</ingestReportString>
+			<chairSearchRadius>25</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AMB_DrankTerere</hediffDef>
+					<severity>1</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		
+		<techLevel>Neolithic</techLevel>
+		<comps>     
+			
+			<li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+				<overdoseSeverityOffset>0</overdoseSeverityOffset>
+			</li>
+		</comps>
+		
+		
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>AMB_DrankTerere</defName>
+		<label>tereré freshness</label>
+		<labelNoun>fresh tereré</labelNoun>
+		<description>Combination of Yerba Mate and lemonade makes a great refreshing drink, good for almost every aspect of life.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-4.8</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+
+			<li>
+			<restFallFactor>0.98</restFallFactor>
+				<statOffsets>
+					<ImmunityGainSpeedFactor>0.35</ImmunityGainSpeedFactor>
+				</statOffsets>				
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<ThoughtDef>
+		<defName>AMB_DrankTerere</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>AMB_DrankTerere</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>Healing Tereré</label>
+				<description>Refreshing, sweet, tangy and tasty.</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+
+		</stages>
+	</ThoughtDef>
+	
+	<!-- Berry Mate -->
+	
+	<ThingDef ParentName="DrugBase">
+		<defName>AMB_BerryMate</defName>
+		<label>death berry mate</label>
+		<description>a hot infusion of yerba mate mixed with dryed orange peel and deathberry juice, the acidness of the orange peel highly reduces death berries addictiveness, but also neutralizes their boost effects, leaving the user happy but a little stoned and dizzy.</description>
+
+		<graphicData>
+			<texPath>Things/Drinks/BerryMate</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<tickerType>Rare</tickerType>
+		
+		<rotatable>false</rotatable>
+		<stackLimit>25</stackLimit>
+		<statBases>
+			<DeteriorationRate>0.5</DeteriorationRate>
+			<MarketValue>18</MarketValue>
+			<Mass>0.5</Mass>
+			<Flammability>0.5</Flammability>
+			<Nutrition>0.08</Nutrition>
+		</statBases>
+		<ingestible>
+			<foodType>Fluid, Processed</foodType>
+			<joyKind>Chemical</joyKind>
+			<joy>0.95</joy>
+			<nurseable>true</nurseable>
+			<drugCategory>Hard</drugCategory>
+			<ingestSound>Ingest_Drink</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.18,0,0)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestCommandString>Drink {0}</ingestCommandString>
+			<ingestReportString>Drinking {0}.</ingestReportString>
+			<chairSearchRadius>25</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AMB_SoftBerried</hediffDef>
+					<severity>1</severity>
+					<toleranceChemical>AMB_DeathBerriesJuice</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AMB_DeathBerriesTolerance</hediffDef>
+					<severity>0.003</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li> 
+			</outcomeDoers>
+		</ingestible>
+		
+		<techLevel>Neolithic</techLevel>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>AMB_DeathBerriesJuice</chemical>
+				<addictiveness>0.12</addictiveness>
+				<minToleranceToAddict>0.045</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+				<needLevelOffset>0.12</needLevelOffset>
+				<listOrder>1000</listOrder>
+			</li>
+		</comps>
+		
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>AMB_SoftBerried</defName>
+		<label>death berries effect(Soft)</label>
+		<labelNoun>drank death berry Mate</labelNoun>
+		<description>Death berries mixed with Yerba and hot water cause even more happiness, however, its boosting effects to movement and manipulation are reversed</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-4.95</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<restFallFactor>1.2</restFallFactor>
+				<statOffsets>
+					<GlobalLearningFactor>-0.5</GlobalLearningFactor>
+				</statOffsets>	
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.42</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.135</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>-0.005</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<ThoughtDef>
+		<defName>AMB_SoftBerried</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>AMB_SoftBerried</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>mixed warm death berry juice</label>
+				<description>Ahh... sweet, warm and calming, I feel like my mouth is in heaven... or I am really in heaven?</description>
+				<baseMoodEffect>32</baseMoodEffect>
+			</li>
+
+		</stages>
+	</ThoughtDef>
+	
+	<!-- Smokeleaf Mate -->
+	
+	<ThingDef ParentName="DrugBase">
+		<defName>AMB_SmokeleafMate</defName>
+		<label>smokeleaf mate</label>
+		<description>a hot infusion of yerba mate mixed with smokeleaf plant leaves. The hot water along with the smokeleaf allows to feel the smokeleaf taste without getting so dizzy and stoned.</description>
+
+		<graphicData>
+			<texPath>Things/Drinks/SmokeleafMate</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<tickerType>Rare</tickerType>
+		
+		<rotatable>false</rotatable>
+		<stackLimit>25</stackLimit>
+		<statBases>
+			<DeteriorationRate>0.5</DeteriorationRate>
+			<MarketValue>7</MarketValue>
+			<Mass>0.3</Mass>
+			<Flammability>0.5</Flammability>
+			<Nutrition>0.02</Nutrition>
+		</statBases>
+		<ingestible>
+			<foodType>Fluid, Processed</foodType>
+			<joyKind>Chemical</joyKind>
+			<joy>0.3</joy>
+			<nurseable>true</nurseable>
+			<drugCategory>Social</drugCategory>
+			<ingestSound>Ingest_Drink</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.18,0,0)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestCommandString>Drink {0}</ingestCommandString>
+			<ingestReportString>Drinking {0}.</ingestReportString>
+			<chairSearchRadius>25</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AMB_SmokeleafMateHigh</hediffDef>
+					<severity>1</severity>
+					<toleranceChemical>Smokeleaf</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>SmokeleafTolerance</hediffDef>
+					<severity>0.012</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li> 
+			</outcomeDoers>
+		</ingestible>
+		
+		<techLevel>Neolithic</techLevel>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>Smokeleaf</chemical>
+				<addictiveness>0.015</addictiveness>
+				<minToleranceToAddict>0.18</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.06</existingAddictionSeverityOffset>
+				<needLevelOffset>0.9</needLevelOffset>
+				<listOrder>1000</listOrder>
+			</li>
+		</comps>
+		
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>AMB_SmokeleafMateHigh</defName>
+		<label>smokeleaf mate effect</label>
+		<labelNoun>smokeleaf mate effect</labelNoun>
+		<description>Smokeleaf's active chemical in the bloodstream. Mixed with hot water, it is less fuzzy.</description>
+		<hediffClass>Hediff_High</hediffClass>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		  <li Class="HediffCompProperties_SeverityPerDay">
+			<severityPerDay>-1.85</severityPerDay>
+			<showHoursToRecover>true</showHoursToRecover>
+		  </li>
+		</comps>
+		  <stages>
+			<li>
+			  <hungerRateFactorOffset>0.15</hungerRateFactorOffset>
+			  <painOffset>-0.095</painOffset>
+			  <capMods>
+				<li>
+				  <capacity>Consciousness</capacity>
+				  <offset>-0.1</offset>
+				</li>
+				<li>
+				  <capacity>Moving</capacity>
+				  <offset>-0.06</offset>
+				</li>
+			  </capMods>
+			</li>
+		  </stages>
+    </HediffDef>
+  
+  <ThoughtDef>
+		<defName>AMB_SmokeleafMateHigh</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>AMB_SmokeleafMateHigh</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+		  <li>
+			<label>drank smokeleaf mate</label>
+			<description>I feel that taste, it makes me happy.</description>
+			<baseMoodEffect>9</baseMoodEffect>
+		  </li>
+		</stages>
+  </ThoughtDef>
+  
+  <!-- Spiced Mate -->
+  
+  <ThingDef ParentName="DrugBase">
+		<defName>AMB_SpicedMate</defName>
+		<label>spiced mate</label>
+		<description>a hot infusion of yerba mate mixed with various spices, it is like Mate, but way much better, it helps healing the body and relaxes the user.</description>
+
+		<graphicData>
+			<texPath>Things/Drinks/SpicedMate</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<tickerType>Rare</tickerType>
+		
+		<rotatable>false</rotatable>
+		<stackLimit>25</stackLimit>
+		<statBases>
+			<DeteriorationRate>0.5</DeteriorationRate>
+			<MarketValue>8</MarketValue>
+			<Mass>0.3</Mass>
+			<Flammability>0.5</Flammability>
+			<Nutrition>0.02</Nutrition>
+		</statBases>
+		<ingestible>
+			<foodType>Fluid, Processed</foodType>
+			<joyKind>Chemical</joyKind>
+			<joy>0.25</joy>
+			<nurseable>true</nurseable>
+			<drugCategory>Social</drugCategory>
+			<ingestSound>Ingest_Drink</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.18,0,0)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestCommandString>Drink {0}</ingestCommandString>
+			<ingestReportString>Drinking {0}.</ingestReportString>
+			<chairSearchRadius>25</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AMB_SpicedMateEffect</hediffDef>
+					<severity>1</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		
+		<techLevel>Neolithic</techLevel>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+			</li>
+		</comps>
+		
+	</ThingDef>
+	
+	<HediffDef>
+    <defName>AMB_SpicedMateEffect</defName>
+    <label>healthy spices</label>
+    <labelNoun>a bunch of healthy spices</labelNoun>
+    <description>Various spices that give a lot of benefits.</description>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+	<hediffClass>HediffWithComps</hediffClass>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.95</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <painOffset>-0.1</painOffset>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.05</offset>
+            </li>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>0.025</offset>
+            </li>
+			<li>
+              <capacity>Metabolism</capacity>
+              <offset>0.03</offset>
+            </li>
+			<li>
+              <capacity>Breathing</capacity>
+              <offset>0.018</offset>
+            </li>
+          </capMods>
+		  <makeImmuneTo>
+			<li>Flu</li>
+		  </makeImmuneTo>
+		  <statOffsets>
+				<ImmunityGainSpeedFactor>0.4</ImmunityGainSpeedFactor>
+				<GlobalLearningFactor>0.85</GlobalLearningFactor>
+		  </statOffsets>
+        </li>
+      </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>AMB_SpicedMateEffect</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>AMB_SpicedMateEffect</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>tasty spices</label>
+        <description>nice and tasty, I feel healthy and happy.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

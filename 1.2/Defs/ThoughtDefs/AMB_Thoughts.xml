@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ <!-- Big Mate -->
+  
+    <ThoughtDef>
+    <defName>AM_DrankBigMate</defName>
+	<durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Drank tasty indigenous mate</label>
+        <description>I liked the taste of that drink, it surely boosts you up.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+ </Defs>

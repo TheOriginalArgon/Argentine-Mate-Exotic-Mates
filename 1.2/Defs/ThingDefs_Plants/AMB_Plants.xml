@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="TreeBase">
+		<defName>AMB_DeathBerry_Bush</defName>
+		<label>deathberry bush</label>
+		<description>An uncommon, very rare bush, it grows randomly and quite hard to predicts, this bush is the source of death berries, one of the most dangerous types of berries, not because they're poisonous or osmething, they're just too delicious.</description>
+		<graphicData>
+			<texPath>Things/Plants/AMB_DeathBerry_Bush</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.15, 0.3, 0.15)</volume>
+				<offset>(0,0,-0.38)</offset>
+			</shadowData>
+		</graphicData>
+		<selectable>true</selectable>
+
+		<statBases>
+			<Beauty>0</Beauty>
+			<Nutrition>1.25</Nutrition>
+		</statBases>
+		<ingestible />
+		<plant>
+			<dieIfLeafless>false</dieIfLeafless>
+			<growDays>55</growDays>
+			<visualSizeRange>0.8~1.5</visualSizeRange>
+			<sowMinSkill>6</sowMinSkill>
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<sowResearchPrerequisites>
+				<li>AMB_DeathberriesSowing</li>
+			</sowResearchPrerequisites>
+			<fertilityMin>0.7</fertilityMin>
+			<topWindExposure>0.05</topWindExposure>
+			<mustBeWildToSow>true</mustBeWildToSow>
+			<immatureGraphicPath>Things/Plants/AMB_DeathBerry_Bush_Immature</immatureGraphicPath>
+			<leaflessGraphicPath>Things/Plants/AMB_DeathBerry_Bush_Leafless</leaflessGraphicPath>
+			<harvestWork>900</harvestWork>
+			<harvestTag>Standard</harvestTag>
+			<harvestYield>7</harvestYield>
+			<harvestedThingDef>AMB_DeathBerries</harvestedThingDef>
+			<harvestFailable>false</harvestFailable>
+			<harvestAfterGrowth>0.20</harvestAfterGrowth>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="TreeBase">
+		<defName>AMB_LemonTree</defName>
+		<label>lemon tree</label>
+		<description>A bushy, semi-tropical tree dotted with lemons, a citric fruit used as base to prepare different drinks and meals.\nLemons are very acid on its own, eating them raw is not so enjoyable and may produce tooth sensitivity.</description>
+		<graphicData>
+			<texPath>Things/Plants/AMB_LemonTree</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.15, 0.3, 0.15)</volume>
+				<offset>(0,0,-0.38)</offset>
+			</shadowData>
+		</graphicData>
+		<selectable>true</selectable>
+
+		<statBases>
+			<Beauty>2</Beauty>
+			<Nutrition>1.25</Nutrition>
+		</statBases>
+		<ingestible />
+		<plant>
+			<dieIfLeafless>false</dieIfLeafless>
+			<growDays>33</growDays>
+			<visualSizeRange>0.8~2.0</visualSizeRange>
+			<sowMinSkill>6</sowMinSkill>
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<fertilityMin>0.7</fertilityMin>
+			<topWindExposure>0.05</topWindExposure>
+			<mustBeWildToSow>true</mustBeWildToSow>
+			<immatureGraphicPath>Things/Plants/AMB_LemonTree_Immature</immatureGraphicPath>
+			<leaflessGraphicPath>Things/Plants/AMB_LemonTree_Leafless</leaflessGraphicPath>
+			<harvestWork>800</harvestWork>
+			<harvestTag>Standard</harvestTag>
+			<harvestYield>50</harvestYield>
+			<harvestedThingDef>AMB_RawLemon</harvestedThingDef>
+			<harvestFailable>true</harvestFailable>
+			<harvestAfterGrowth>0.20</harvestAfterGrowth>
+		</plant>
+	</ThingDef>
+	
+	<!-- Mint Plant -->
+	
+	<ThingDef ParentName="PlantBase">
+		<defName>AMB_MintPlant</defName>
+		<label>mint plant</label>
+		<description>Mentha Spicata, the most popular type of mint. Mint has an invasive taste, added in small quantities it can give a magic taste to Mate.</description>
+		<statBases>
+			<MaxHitPoints>45</MaxHitPoints>
+			<Nutrition>0.03</Nutrition>
+			<Beauty>5</Beauty>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Plants/MintPlant</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<pathCost>3</pathCost>
+		<ingestible />
+		<plant>
+			<sowResearchPrerequisites>
+				<li>AM_MateMixing</li>
+			</sowResearchPrerequisites>
+			<fertilityMin>1</fertilityMin>
+			<fertilitySensitivity>1</fertilitySensitivity>
+			<dieIfLeafless>true</dieIfLeafless>
+			<harvestTag>Standard</harvestTag>
+			<maxMeshCount>1</maxMeshCount>
+			<harvestedThingDef>AMB_MintLeaves</harvestedThingDef>
+			<harvestAfterGrowth>0.30</harvestAfterGrowth>
+			<harvestYield>2</harvestYield>
+			<harvestWork>50</harvestWork>
+			<sowTags>
+				<li>Decorative</li>
+			</sowTags>
+			<topWindExposure>0.1</topWindExposure>
+			<growDays>4.2</growDays>			
+			<visualSizeRange>0.9~1.2</visualSizeRange>
+			<immatureGraphicPath>Things/Plants/MintPlant</immatureGraphicPath>
+			<wildOrder>2</wildOrder>
+			<purpose>Food</purpose>
+		</plant>
+	</ThingDef>
+	
+	<!-- Té de Burro -->
+	
+	<ThingDef ParentName="PlantBase">
+		<defName>AMB_TeDeBurroPlant</defName>
+		<label>té de burro plant</label>
+		<description>Aloysia polystachya, a commont plant commonly grown by the native cultures who loved Mate. Té de burro provides a light and smooth taste to mate, very healthy.</description>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Nutrition>0.2</Nutrition>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Plants/TeDeBurroPlant</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<selectable>true</selectable>
+		<pathCost>20</pathCost>
+		<ingestible />
+		<plant>
+			<sowResearchPrerequisites>
+				<li>AM_MateMixing</li>
+			</sowResearchPrerequisites>
+			<fertilityMin>1</fertilityMin>
+			<fertilitySensitivity>1</fertilitySensitivity>
+			<dieIfLeafless>true</dieIfLeafless>
+			<harvestTag>Standard</harvestTag>
+			<maxMeshCount>1</maxMeshCount>
+			<harvestedThingDef>AMB_TeDeBurroLeaves</harvestedThingDef>
+			<harvestAfterGrowth>0.30</harvestAfterGrowth>
+			<harvestYield>11</harvestYield>
+			<harvestWork>85</harvestWork>
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<topWindExposure>0.1</topWindExposure>
+			<growDays>7.2</growDays>			
+			<visualSizeRange>0.3~0.9</visualSizeRange>
+			<wildOrder>2</wildOrder>
+			<purpose>Food</purpose>
+		</plant>
+	</ThingDef>
+</Defs>

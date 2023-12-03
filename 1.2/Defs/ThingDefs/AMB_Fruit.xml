@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Lemons -->
+	<ThingDef ParentName="VCE_FruitFoodRawBase">
+		<defName>AMB_RawLemon</defName>
+		<label>lemons</label>
+		<description>Yellow citric fruits, while not so sweet like most other fruits, mixing lemon juice with sugar allows the creation of lemonade, a refreshing and healthy drink.\nLemons are very acid on its own, eating them raw is not so enjoyable and may produce tooth sensitivity.</description>
+		<soundInteract>Grain_Drop</soundInteract>
+		<soundDrop>Grain_Drop</soundDrop>	
+		<thingCategories>
+			<li>VCE_Fruit</li>
+		</thingCategories>
+		<graphicData>
+
+			<texPath>Things/Items/Raw/AMB_Lemons</texPath>
+
+		</graphicData>
+		<statBases>
+			<MarketValue>1.2</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>15</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+
+		<ingestible>
+			<tasteThought>AMB_AteRawLemons</tasteThought>
+			<preferability>RawBad</preferability>
+			<foodType>VegetableOrFruit</foodType>
+		</ingestible>    
+	</ThingDef>
+	
+	<ThoughtDef>
+		<defName>AMB_AteRawLemons</defName>
+		<durationDays>1</durationDays>
+		<stages>
+		  <li>
+			<label>Ate raw lemons</label>
+			<description>I had to eat raw acid lemons, it feels annoying in my teeth.</description>
+			<baseMoodEffect>-4</baseMoodEffect>
+		  </li>
+		</stages>
+    </ThoughtDef>
+	
+	<!-- Death Berries -->
+	<ThingDef ParentName="DrugBase">
+		<defName>AMB_DeathBerries</defName>
+		<label>death berries</label>
+		<description>A rare type of berries found along the Rimworlds, they have a strange taste, it's sweet and fizzy, but at the same time spicy and acid.\n\nDeath berries are addictive, very addictive, but its addictive properties can be nullified if mixed correctrly in a hot drink.\n\nDeath berries were used in the past as a method of torture, they used them against people who were addicted to them to force them kill friends or betray their people.</description>
+		<graphicData>
+			<texPath>Things/Items/Raw/AMB_DeathBerries</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingCategories>
+			<li>AMB_MateIngredients</li>
+		</thingCategories>
+		<tickerType>Rare</tickerType>
+		
+		<rotatable>false</rotatable>
+		<stackLimit>25</stackLimit>
+		<statBases>
+			<DeteriorationRate>0.5</DeteriorationRate>
+			<MarketValue>12</MarketValue>
+			<Mass>0.3</Mass>
+			<Flammability>0.5</Flammability>
+			<Nutrition>0.07</Nutrition>
+		</statBases>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+			<joyKind>Chemical</joyKind>
+			<joy>1.85</joy>
+			<nurseable>true</nurseable>
+			<drugCategory>Social</drugCategory>
+			<ingestSound>RawVegetable_Eat</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.18,0,0)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestCommandString>Consume {0}</ingestCommandString>
+			<ingestReportString>Consuming {0}.</ingestReportString>
+			<chairSearchRadius>25</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AMB_Berried</hediffDef>
+					<severity>1</severity>
+					<toleranceChemical>AMB_DeathBerriesJuice</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AMB_DeathBerriesTolerance</hediffDef>
+					<severity>0.016</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li> 
+			</outcomeDoers>
+		</ingestible>
+		
+		<techLevel>Neolithic</techLevel>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>AMB_DeathBerriesJuice</chemical>
+				<addictiveness>0.12</addictiveness>
+				<minToleranceToAddict>0.035</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+				<needLevelOffset>0.95</needLevelOffset>
+				<listOrder>10</listOrder>
+			</li>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>35</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>AMB_Berried</defName>
+		<label>death berries effect</label>
+		<labelNoun>ate death berries</labelNoun>
+		<description>Death berries cause happiness and boosts movement speed, high concentrations of sugar and unknown chemicals produce this state of satisfaction.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-3.75</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<restFallFactor>0.9</restFallFactor>
+				<statOffsets>
+					<GlobalLearningFactor>1.15</GlobalLearningFactor>
+				</statOffsets>	
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>1.2</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>1.8</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.8</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>1.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<ThoughtDef>
+		<defName>AMB_Berried</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>AMB_Berried</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>Delicious death berries</label>
+				<description>Ahh... sweet, so sweet and intense, it's like a mechanoid war inside my mouth, it drives me crazy, I should try more of these.</description>
+				<baseMoodEffect>25</baseMoodEffect>
+			</li>
+
+		</stages>
+	</ThoughtDef>
+	
+	<!-- Death Berries Addiction -->
+
+	<ChemicalDef>
+		<defName>AMB_DeathBerriesJuice</defName>
+		<label>Death Berries Juice</label>
+		<addictionHediff>AMB_DeathBerriesAddiction</addictionHediff>
+		<toleranceHediff>AMB_DeathBerriesTolerance</toleranceHediff>
+		<onGeneratedAddictedToleranceChance>1.2</onGeneratedAddictedToleranceChance>
+
+	</ChemicalDef>
+
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>AMB_Need_DeathBerries</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>death berries</label>
+		<description>Because of an addiction to death berries, this person needs to regularly ingest the drug to avoid withdrawal symptoms.</description>
+		<listPriority>35</listPriority>
+	</NeedDef>
+
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>AMB_DeathBerriesTolerance</defName>
+		<label>death berries tolerance</label>
+		<description>A built-up tolerance to death berries. The more severe this tolerance is, the more death berries it take to get the same effect.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.012</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DrugEffectFactor">
+				<chemical>AMB_DeathBerriesJuice</chemical>
+			</li>
+		</comps>
+		<hediffGivers>
+			<li Class="HediffGiver_RandomDrugEffect">
+				<hediff>Dementia</hediff>
+				<minSeverity>0.05</minSeverity>
+				<baseMtbDays>360</baseMtbDays>
+				<partsToAffect>
+					<li>Brain</li>
+				</partsToAffect>
+			</li>
+		</hediffGivers>
+	</HediffDef>
+
+	<HediffDef ParentName="AddictionBase">
+		<defName>AMB_DeathBerriesAddiction</defName>
+		<label>death berries addiction</label>
+		<description>A chemical addiction to death berries. Long-term presence of death berry juice has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of death berries, withdrawal symptoms will begin. However, very extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.\n\nThis drug is so powerful that sometimes it is just convenient to keep the addiction instead of facing the withdrawal symptoms.</description>
+		<hediffClass>Hediff_Addiction</hediffClass>
+		<causesNeed>AMB_Need_DeathBerries</causesNeed>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.008</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+			</li>
+			<li>
+				<label>withdrawal</label>
+				<restFallFactorOffset>1.25</restFallFactorOffset>
+				<socialFightChanceFactor>8.2</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.75</setMax>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.18</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>-0.18</offset>
+					</li>
+					<li>
+						<capacity>Metabolism</capacity>
+						<offset>-0.2</offset>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>-0.12</offset>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.25</setMax>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>Binging_DrugExtreme</mentalState>
+						<mtbDays>28</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<painOffset>0.2</painOffset>
+				<vomitMtbDays>0.9</vomitMtbDays>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThoughtDef>
+		<defName>AMB_DeathBerriesWithdrawal</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>AMB_DeathBerriesAddiction</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>death berries withdrawal</label>
+				<description>I need sugar, everything's blurry and confusing, I'm lacking energy, I feel like everyone's against me, that should be... oh... I can't... this is so... I need them... now...</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

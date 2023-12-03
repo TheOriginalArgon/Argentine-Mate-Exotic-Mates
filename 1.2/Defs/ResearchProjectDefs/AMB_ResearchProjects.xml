@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ResearchProjectDef>
+		<defName>AM_MateMixing</defName>
+		<label>herbs mixing</label>
+		<description>Learn the art of mixind various ingredients with Yerba Mate in order to make different variations of Mate that give different effects when consumed.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<prerequisites>
+			<li>AM_MateMaking</li>
+		</prerequisites>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>5.50</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>AMB_DeathberriesSowing</defName>
+		<label>Deathberries Sowing</label>
+		<description>Learn how to generate the exact climate conditions in order to grow Deathberries.</description>
+		<baseCost>3255</baseCost>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>Hydroponics</li>
+		</prerequisites>
+		<researchViewX>7.00</researchViewX>
+		<researchViewY>0.00</researchViewY>
+	</ResearchProjectDef>
+</Defs>

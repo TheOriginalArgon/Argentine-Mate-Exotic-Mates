@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- Temperate Biomes -->
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/BiomeDef[defName = "TemperateForest"]/wildPlants</xpath>
+		<value>
+			<AMB_LemonTree>0.01</AMB_LemonTree>
+			<AMB_DeathBerry_Bush>0.002</AMB_DeathBerry_Bush>
+			
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/BiomeDef[defName = "AridShrubland"]/wildPlants</xpath>
+		<value>
+			<AMB_DeathBerry_Bush>0.002</AMB_DeathBerry_Bush>
+			
+		</value>
+	</Operation>
+	
+		<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/BiomeDef[defName = "BorealForest"]/wildPlants</xpath>
+		<value>
+			<AMB_DeathBerry_Bush>0.002</AMB_DeathBerry_Bush>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/BiomeDef[defName = "TemperateSwamp"]/wildPlants</xpath>
+		<value>
+			<AMB_DeathBerry_Bush>0.002</AMB_DeathBerry_Bush>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/BiomeDef[defName = "ColdBog"]/wildPlants</xpath>
+		<value>
+			<AMB_DeathBerry_Bush>0.002</AMB_DeathBerry_Bush>	
+		</value>
+	</Operation>	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/BiomeDef[defName = "Desert"]/wildPlants</xpath>
+		<value>
+			<AMB_DeathBerry_Bush>0.002</AMB_DeathBerry_Bush>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/BiomeDef[defName = "Tundra"]/wildPlants</xpath>
+		<value>
+			<AMB_DeathBerry_Bush>0.002</AMB_DeathBerry_Bush>
+		</value>
+	</Operation>	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/BiomeDef[defName = "TropicalRainforest"]/wildPlants</xpath>
+		<value>
+			<AMB_DeathBerry_Bush>0.002</AMB_DeathBerry_Bush>
+			<AMB_LemonTree>0.01</AMB_LemonTree>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/BiomeDef[defName = "TropicalSwamp"]/wildPlants</xpath>
+		<value>
+			<AMB_DeathBerry_Bush>0.002</AMB_DeathBerry_Bush>
+			<AMB_LemonTree>0.01</AMB_LemonTree>
+		</value>
+	</Operation>
+</Patch>

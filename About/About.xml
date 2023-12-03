@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Argentinian Mate - Mixed Herbs</name>
+	<author>Argón</author>
+	<supportedVersions><li>1.1</li><li>1.2</li></supportedVersions>
+	<packageId>Argon.ArgMate.MixedHerbs</packageId>
+	<description>
+	Add-on for the Mate mod, it includes various types of mate that can provide different effects.
+	</description>
+	<modDependencies>
+	    <li>
+	      <packageId>Argon.ArgMate</packageId>
+	      <displayName>Argentinian Mate</displayName>
+	      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2194515308</steamWorkshopUrl>
+	    </li>
+	    <li>
+	      <packageId>VanillaExpanded.VPlantsE</packageId>
+	      <displayName>Vanilla Plants Expanded</displayName>
+	      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2134308522</steamWorkshopUrl>
+	    </li>
+	    <li>
+	      <packageId>VanillaExpanded.VCookE</packageId>
+	      <displayName>Vanilla Cooking Expanded</displayName>
+	      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2134308519</steamWorkshopUrl>
+	    </li>
+	</modDependencies>
+	<loadAfter>
+		<li>Argon.ArgMate</li>
+		<li>VanillaExpanded.VPlantsE</li>
+		<li>VanillaExpanded.VCookE</li>
+	</loadAfter>
+</ModMetaData>
